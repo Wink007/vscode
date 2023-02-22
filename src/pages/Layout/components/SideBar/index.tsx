@@ -25,10 +25,11 @@ const SideBarComponent: FunctionComponent = () => {
     isPrimarySideBarOpened,
     setIsPrimarySideBarOpened,
   } = useContext(CustomLayoutContext);
-  const isLeftPosition = layoutSideBarPosition === "left";
   const [hoveredClass, setHoveredClass] = useState(false);
   const [isSideBarHovered, setIsSideBarHovered] = useState(false);
   const draggableDiv = useRef<HTMLDivElement | null>(null);
+
+  const isLeftPosition = layoutSideBarPosition === "left";
 
   const dispatch = useDispatch();
 
@@ -42,16 +43,16 @@ const SideBarComponent: FunctionComponent = () => {
     setHoveredClass(true);
   };
 
+  const removeHovered = () => {
+    setHoveredClass(false);
+  };
+
   useEffect(() => {
     if (draggableDiv.current && draggableDiv.current.clientWidth < 90) {
       setIsPrimarySideBarOpened(!isPrimarySideBarOpened);
       return;
     }
   }, [dispatch, width]);
-
-  const removeHovered = () => {
-    setHoveredClass(false);
-  };
 
   return (
     <SideBarWrapper

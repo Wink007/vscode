@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 import { NavigationComponentProps } from "./interface";
 
-export const NavigationComponentWrapper = styled.div`
+const NavigationComponentWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -16,7 +16,7 @@ export const NavigationComponentWrapper = styled.div`
   }
 `;
 
-export const TitleStyle = styled.button`
+const TitleStyle = styled.button`
   display: flex;
   align-items: center;
   height: 22px;
@@ -32,7 +32,7 @@ export const TitleStyle = styled.button`
   }
 `;
 
-export const TitleWrapperStyle = styled.div`
+const TitleWrapperStyle = styled.div`
   display: flex;
   align-items: center;
   flex: 1;
@@ -42,7 +42,7 @@ export const TitleWrapperStyle = styled.div`
   text-overflow: ellipsis;
 `;
 
-export const CollapseIconStyle = styled.div`
+const CollapseIconStyle = styled.div`
   position: relative;
   margin-left: auto;
   z-index: 2;
@@ -50,7 +50,7 @@ export const CollapseIconStyle = styled.div`
   cursor: pointer;
 `;
 
-export const NavigationListStyle = styled.div<NavigationComponentProps>`
+const NavigationListStyle = styled.div<NavigationComponentProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -71,12 +71,15 @@ export const NavigationListStyle = styled.div<NavigationComponentProps>`
     `}
 `;
 
-export const NavLinkStyle = styled(NavLink)`
+const NavLinkStyle = styled(NavLink)`
   display: flex;
   align-items: center;
   height: 22px;
   padding-left: 32px;
   color: #9e9f9f;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 
   &:visited {
     color: #9e9f9f;
@@ -96,17 +99,21 @@ export const NavLinkStyle = styled(NavLink)`
   }
 
   & > span {
+    display: block;
     padding-bottom: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 
-export const NameSpanStyle = styled.span`
+const NameSpanStyle = styled.span`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 
-export const SubTitleStyle = styled.button`
+const SubTitleStyle = styled.button`
   display: flex;
   align-items: center;
   height: 22px;
@@ -121,8 +128,20 @@ export const SubTitleStyle = styled.button`
   }
 `;
 
-export const ImgStyle = styled.div`
+const ImgStyle = styled.div`
   width: 16px;
   height: 16px;
   margin-right: 6px;
 `;
+
+export {
+  NavigationComponentWrapper,
+  TitleStyle,
+  TitleWrapperStyle,
+  CollapseIconStyle,
+  NavigationListStyle,
+  NavLinkStyle,
+  NameSpanStyle,
+  SubTitleStyle,
+  ImgStyle,
+};
