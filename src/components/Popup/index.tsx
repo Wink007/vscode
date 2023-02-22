@@ -5,6 +5,7 @@ import { PopupContext } from "./components/PopupContext";
 import { PopupComponentWrapperStyle } from "./style";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { PopupData } from "./data";
+import { HeadingStyle, CloseButtonStyle } from "./style";
 
 const PopupComponent: FunctionComponent = () => {
   const popupType = useTypedSelector((state) => state.popup.popupType);
@@ -12,23 +13,8 @@ const PopupComponent: FunctionComponent = () => {
 
   const componentRef = useRef<HTMLUListElement>(null);
   const { Component } = PopupData[popupType];
-
-  const handleOutsideClick = (e: MouseEvent) => {
-    if (
-      componentRef.current &&
-      !componentRef.current.contains(e.target as Node)
-    ) {
-      handlePopupToggle();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [handlePopupToggle]);
+  const popupHeadingName =
+    popupType === "theme" ? "Color Theme" : "Customize Layout";
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -48,6 +34,12 @@ const PopupComponent: FunctionComponent = () => {
 
   return (
     <PopupComponentWrapperStyle ref={componentRef}>
+      <HeadingStyle>
+        {popupHeadingName}
+        <CloseButtonStyle title="Close" onClick={handlePopupToggle}>
+          <span className="codicon codicon-close"></span>
+        </CloseButtonStyle>
+      </HeadingStyle>
       <Component />
     </PopupComponentWrapperStyle>
   );

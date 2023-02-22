@@ -2,14 +2,13 @@ import { FunctionComponent, memo, useContext } from "react";
 import { CUSTOMIZE_LAYOUT_DATA } from "./data";
 
 import { ItemStyle } from "../style";
+import { CustomLayoutContext } from "./CustomLayoutContext/CustomLayoutContext";
 import {
   LabelIconStyle,
   FlexStyle,
   CurrentLabelStyle,
-  HeadingStyle,
   SubTitleStyle,
 } from "./style";
-import { CustomLayoutContext } from "./CustomLayoutContext/CustomLayoutContext";
 
 const CustomizeLayoutComponent: FunctionComponent = () => {
   const {
@@ -39,7 +38,6 @@ const CustomizeLayoutComponent: FunctionComponent = () => {
 
   return (
     <>
-      <HeadingStyle>Customize Layout</HeadingStyle>
       {CUSTOMIZE_LAYOUT_DATA.map(({ icon, label, subTitle, hasSeparator }) => {
         return (
           <div key={label}>

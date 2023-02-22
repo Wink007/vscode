@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle<ThemeParams>(
     outline: none;
     background: transparent;
     border: 1px solid transparent;
+    cursor: pointer;
   }
 
   button:active{

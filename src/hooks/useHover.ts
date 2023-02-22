@@ -1,8 +1,11 @@
-import { useState, HTMLProps } from 'react';
+import { useState, HTMLProps } from "react";
 
 type HoverProps = {
   hovering: boolean;
-} & Pick<HTMLProps<HTMLDivElement | HTMLAnchorElement>, 'onMouseOver' | 'onMouseOut'>;
+} & Pick<
+  HTMLProps<HTMLDivElement | HTMLAnchorElement>,
+  "onMouseOver" | "onMouseOut"
+>;
 
 export const useHover = (): [boolean, HoverProps] => {
   const [hovering, setHovering] = useState(false);
@@ -13,8 +16,8 @@ export const useHover = (): [boolean, HoverProps] => {
   const hoverProps: HoverProps = {
     hovering,
     onMouseOver,
-    onMouseOut
+    onMouseOut,
   };
 
   return [hovering, hoverProps];
-}
+};

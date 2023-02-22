@@ -1,4 +1,10 @@
-import { memo, FunctionComponent, useState, useContext } from "react";
+import {
+  memo,
+  FunctionComponent,
+  useState,
+  useContext,
+  useEffect,
+} from "react";
 import { CustomLayoutContext } from "../../../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
 
 import { Tooltip } from "../../../../../../components/Tooltip";
@@ -16,8 +22,20 @@ const SettingsComponent: FunctionComponent = () => {
   const tooltipPosition = isLeftPosition ? "right" : "left";
 
   const handleSettingsClick = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (isOpen && event.key === "Escape") {
+        setIsOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   return (
     <SettingsWrapperStyle {...hoverProps}>

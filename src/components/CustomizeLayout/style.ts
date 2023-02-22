@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import { LabelStyle } from "../style";
 
-const HeadingStyle = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 24px;
-  margin: -6px -6px 4px -6px;
-  background-color: #3b3b3c;
-  font-size: 11px;
-`;
-
 const FlexStyle = styled.div`
   display: flex;
   align-items: center;
@@ -35,10 +25,4 @@ const SubTitleStyle = styled.span`
   color: #5292f7;
 `;
 
-export {
-  HeadingStyle,
-  LabelIconStyle,
-  CurrentLabelStyle,
-  FlexStyle,
-  SubTitleStyle,
-};
+export { LabelIconStyle, CurrentLabelStyle, FlexStyle, SubTitleStyle };
