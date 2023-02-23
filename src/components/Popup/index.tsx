@@ -2,10 +2,14 @@
 import { memo, FunctionComponent, useContext, useRef, useEffect } from "react";
 import { PopupContext } from "./components/PopupContext";
 
-import { PopupComponentWrapperStyle } from "./style";
+import { Settings } from "../../pages/Layout/components/MenuBar/components/Settings/component/ContentInside/data";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { PopupData } from "./data";
-import { HeadingStyle, CloseButtonStyle } from "./style";
+import {
+  PopupComponentWrapperStyle,
+  HeadingStyle,
+  CloseButtonStyle,
+} from "./style";
 
 const PopupComponent: FunctionComponent = () => {
   const popupType = useTypedSelector((state) => state.popup.popupType);
@@ -14,7 +18,7 @@ const PopupComponent: FunctionComponent = () => {
   const componentRef = useRef<HTMLUListElement>(null);
   const { Component } = PopupData[popupType];
   const popupHeadingName =
-    popupType === "theme" ? "Color Theme" : "Customize Layout";
+    popupType === Settings.theme ? "Color Theme" : "Customize Layout";
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

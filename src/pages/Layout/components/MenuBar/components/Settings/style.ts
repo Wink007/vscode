@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 
 const SettingsWrapperStyle = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
 `;
 
 const SpanIcon = styled.div<{ isOpen: boolean }>`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

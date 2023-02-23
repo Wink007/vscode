@@ -12,10 +12,7 @@ export const addPageReducer = (
 ) => {
   switch (action.type) {
     case PAGE_ADD:
-      if (
-        (action.meta && state.pages.includes(action.meta)) ||
-        action.meta === "/"
-      ) {
+      if (action.meta && state.pages.includes(action.meta)) {
         return { ...state };
       }
 

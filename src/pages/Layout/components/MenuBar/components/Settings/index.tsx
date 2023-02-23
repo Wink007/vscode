@@ -6,17 +6,18 @@ import {
   useEffect,
 } from "react";
 import { CustomLayoutContext } from "../../../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
+import { PopupContext } from "../../../../../../components/Popup/components/PopupContext";
 
 import { Tooltip } from "../../../../../../components/Tooltip";
-import { useHover } from "../../../../../../hooks/useHover";
 import { ContentInside } from "./component/ContentInside";
 import { SettingsWrapperStyle, SpanIcon, IconStyle } from "./style";
 
 const SettingsComponent: FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHovering, hoverProps] = useHover();
+  const [isHover, setIsHover] = useState(false);
 
   const { layoutSideBarPosition } = useContext(CustomLayoutContext);
+  const { isPopupOpened } = useContext(PopupContext);
 
   const isLeftPosition = layoutSideBarPosition === "left";
   const tooltipPosition = isLeftPosition ? "right" : "left";
@@ -24,6 +25,13 @@ const SettingsComponent: FunctionComponent = () => {
   const handleSettingsClick = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isPopupOpened) {
+      setIsOpen(false);
+      setIsHover(false);
+    }
+  }, [isPopupOpened]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -38,23 +46,24 @@ const SettingsComponent: FunctionComponent = () => {
   }, [isOpen]);
 
   return (
-    <SettingsWrapperStyle {...hoverProps}>
+    <SettingsWrapperStyle
+      onClick={handleSettingsClick}
+      onMouseOver={() => setIsHover(true)}
+      onMouseOut={() => setIsHover(false)}
+    >
       <SpanIcon isOpen={isOpen}>
-        <IconStyle
-          onClick={handleSettingsClick}
-          className="icon codicon codicon-gear"
-        />
+        <IconStyle className="icon codicon codicon-gear" />
         {isOpen && (
           <Tooltip position={tooltipPosition}>
             <ContentInside onClick={handleSettingsClick} />
           </Tooltip>
         )}
-        {isHovering && !isOpen && (
-          <Tooltip position={tooltipPosition}>
-            <span>Manage</span>
-          </Tooltip>
-        )}
       </SpanIcon>
+      {isHover && !isOpen && (
+        <Tooltip position={tooltipPosition}>
+          <span>Manage</span>
+        </Tooltip>
+      )}
     </SettingsWrapperStyle>
   );
 };

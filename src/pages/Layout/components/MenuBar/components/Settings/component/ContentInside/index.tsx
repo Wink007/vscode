@@ -13,13 +13,16 @@ export interface ContentInsideProps {
 const ContentInsideComponent: FunctionComponent<ContentInsideProps> = ({
   onClick,
 }) => {
-  const { handlePopupToggle } = useContext(PopupContext);
+  const { isPopupOpened, handlePopupToggle } = useContext(PopupContext);
   const dispatch = useDispatch();
 
   const handleItemClick = (type: Settings) => () => {
     dispatch(popupType(type));
+
     onClick();
-    handlePopupToggle();
+    if (!isPopupOpened) {
+      handlePopupToggle();
+    }
   };
 
   return (

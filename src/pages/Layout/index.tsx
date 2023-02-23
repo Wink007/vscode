@@ -6,16 +6,14 @@ import { Content } from "./components/Content";
 
 import { LayoutWrapperStyle } from "./style";
 
-const LayoutComponent: FunctionComponent = () => {
-  return (
-    <LayoutWrapperStyle>
-      <PopupContextWrapper>
-        <CustomLayoutProvider>
-          <Content />
-        </CustomLayoutProvider>
-      </PopupContextWrapper>
-    </LayoutWrapperStyle>
-  );
-};
+const LayoutComponent: FunctionComponent = () => (
+  <LayoutWrapperStyle>
+    <PopupContextWrapper>
+      <CustomLayoutProvider>
+        <Content />
+      </CustomLayoutProvider>
+    </PopupContextWrapper>
+  </LayoutWrapperStyle>
+);
 
 export const Layout = memo(LayoutComponent);

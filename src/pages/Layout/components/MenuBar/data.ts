@@ -7,18 +7,18 @@ interface MenuItemsProps {
 }
 
 export const menuItems: MenuItemsProps[] = [
+  // {
+  //   icon: "files",
+  //   link: PageNames.welcome,
+  //   localeKey: "Welcome",
+  // },
   {
     icon: "files",
-    link: PageNames.welcome,
-    localeKey: "Welcome",
-  },
-  {
-    icon: "jersey",
     link: PageNames.home,
     localeKey: "Home",
   },
   {
-    icon: "search",
+    icon: "jersey",
     link: PageNames.readme,
     localeKey: "README",
   },

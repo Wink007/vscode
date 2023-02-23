@@ -15,6 +15,8 @@ import {
   ImgStyle,
 } from "./style";
 import { useGetUrl } from "../../../../../../hooks/useGetUrl";
+import { PageNames } from "../../../../../enum";
+import { EmptyNavigation } from "../EmptyPage";
 
 const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
   isHovered,
@@ -23,6 +25,10 @@ const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
   const [isOpenFolder, setIsOpenFolder] = useState(true);
   const dispatch = useDispatch();
   const url = useGetUrl();
+
+  const isEmptyPage = url === PageNames.welcome;
+  const folderName = isEmptyPage ? "no folder opened" : "alex klievtsov";
+  const expandCollapseIcon = isOpenFolder ? "expand-all" : "collapse-all";
 
   const chevronIcon = isOpen ? "chevron-down" : "chevron-right";
   const chevronIconFolder = isOpenFolder ? "chevron-down" : "chevron-right";
@@ -48,17 +54,18 @@ const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
       <TitleStyle>
         <TitleWrapperStyle onClick={handleClick}>
           <span className={`codicon codicon-${chevronIcon}`} />
-          <NameSpanStyle>alex klievtsov</NameSpanStyle>
+          <NameSpanStyle>{folderName}</NameSpanStyle>
         </TitleWrapperStyle>
-        {isOpen && (
+        {!isEmptyPage && isOpen && (
           <CollapseIconStyle
             onClick={handleClickFolder}
             title="Collapse Folders in Explorer"
-            className={`codicon codicon-collapse-all`}
+            className={`codicon codicon-${expandCollapseIcon}`}
           />
         )}
       </TitleStyle>
-      {isOpen && (
+      {isOpen && isEmptyPage && <EmptyNavigation />}
+      {isOpen && !isEmptyPage && (
         <>
           <SubTitleStyle onClick={handleClickFolderFiles}>
             <span className={`codicon codicon-${chevronIconFolder}`} />

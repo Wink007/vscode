@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { removePage } from "../../../../redux/addPages/actions";
 import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import { tabLists } from "./data";
-import { PageNames } from '../../../enum';
+import { PageNames } from "../../../enum";
 import {
   TabsComponentWrapperStyle,
   TabStyle,
