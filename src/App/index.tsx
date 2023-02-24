@@ -36,9 +36,10 @@ export const themesMap = {
 // `
 // );
 
-const App = ({ initialTheme = "light", initialCustomTheme = {} }) => {
+const App = ({ initialTheme = "vscodeDefault", initialCustomTheme = {} }) => {
   // Store the users theme preference in state
   const [currentTheme, setCurrentTheme] = useState(initialTheme);
+  console.log("currentTheme: ", currentTheme);
   const [customTheme, setCustomTheme] = useState(initialCustomTheme);
 
   const [cookies, setCookie] = useCookies();
@@ -66,11 +67,11 @@ const App = ({ initialTheme = "light", initialCustomTheme = {} }) => {
     const themeQuery = window.matchMedia("(prefers-color-scheme: light)");
     // If the user has not set a preference yet, set to their OS theme
     if (!themePreference)
-      setCurrentThemeAndSavePref(themeQuery.matches ? "light" : "dark");
+      setCurrentThemeAndSavePref(themeQuery.matches ? "vscodeDefault" : "dark");
     // If the user is using a theme other than light/dark, don't change it based on their OS
-    if (initialTheme === "light" || initialTheme === "dark") {
+    if (initialTheme === "vscodeDefault" || initialTheme === "dark") {
       themeQuery.addEventListener("change", ({ matches }) => {
-        setCurrentThemeAndSavePref(matches ? "light" : "dark");
+        setCurrentThemeAndSavePref(matches ? "vscodeDefault" : "dark");
       });
     }
   });

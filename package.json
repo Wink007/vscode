@@ -1,7 +1,8 @@
 {
   "name": "vscode-portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://wink007.github.io/vscode",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
     "@testing-library/jest-dom": "^5.14.1",
@@ -28,6 +29,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -53,6 +56,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "gh-pages": "^5.0.0"
   }
 }
