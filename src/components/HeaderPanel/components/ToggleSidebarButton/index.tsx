@@ -1,7 +1,7 @@
 import { FunctionComponent, memo, useContext } from "react";
-import { CustomLayoutContext } from "../../../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
-import { Tooltip } from "../../../../../../components/Tooltip";
-import { useHover } from "../../../../../../hooks/useHover";
+import { useHover } from "../../../../hooks/useHover";
+import { CustomLayoutContext } from "../../../CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
+import { Tooltip } from "../../../Tooltip";
 import { ButtonToggleSidebarStyle } from "../../style";
 
 const ToggleSidebarButtonComponent: FunctionComponent = () => {

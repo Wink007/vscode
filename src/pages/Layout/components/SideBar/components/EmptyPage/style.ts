@@ -7,6 +7,12 @@ const EmptyNavigationComponentWrapper = styled.div`
   height: 28px;
   padding: 13px 20px 0;
   font-size: 13px;
+
+  & > p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 `;
 
 const NavLinkButtonStyle = styled(NavLink)`

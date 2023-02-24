@@ -1,5 +1,4 @@
 import { FunctionComponent, memo, useContext } from "react";
-import { CustomLayoutContext } from "../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
 import { GitBranch } from "./components/GitBranch";
 import { Notifications } from "./components/Notifications";
 import { Errors } from "./components/Errors";
@@ -10,6 +9,7 @@ import {
   LeftSideStyle,
   RightSideStyle,
 } from "./style";
+import { CustomLayoutContext } from "../CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
 
 const FooterComponent: FunctionComponent = () => {
   const { isStatusBarOpened } = useContext(CustomLayoutContext);

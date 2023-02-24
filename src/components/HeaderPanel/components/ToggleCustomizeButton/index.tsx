@@ -1,12 +1,13 @@
 import { FunctionComponent, memo, useContext } from "react";
-import { PopupContext } from "../../../../../../components/Popup/components/PopupContext";
-import { Tooltip } from "../../../../../../components/Tooltip";
-import { useHover } from "../../../../../../hooks/useHover";
-import { popupType } from "../../../../../../redux/popupType/actions";
-import { Settings } from "../../../MenuBar/components/Settings/component/ContentInside/data";
-import { ButtonToggleSidebarStyle } from "../../style";
 import { useDispatch } from "react-redux";
-import { useTypedSelector } from "../../../../../../hooks/useTypedSelector";
+import { useHover } from "../../../../hooks/useHover";
+import { useTypedSelector } from "../../../../hooks/useTypedSelector";
+import { Settings } from "../../../../pages/Layout/components/MenuBar/components/Settings/component/ContentInside/data";
+import { popupType } from "../../../../redux/popupType/actions";
+import { PopupContext } from "../../../Popup/components/PopupContext";
+import { Tooltip } from "../../../Tooltip";
+
+import { ButtonToggleSidebarStyle } from "../../style";
 
 const ToggleCustomizeButtonComponent: FunctionComponent = () => {
   const type = useTypedSelector((state) => state.popup.popupType);

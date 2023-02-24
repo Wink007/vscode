@@ -22,7 +22,7 @@ const IconStyle = styled.div`
 `;
 
 const BranchContentStyle = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   align-items: center;
   padding: 2px;
@@ -46,7 +46,13 @@ position: relative;
 const ErrorsWrapperStyle = styled.div`
   position: relative;
   display: flex;
-`
+
+  ${BranchContentStyle} {
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+`;
 
 const RightSideStyle = styled(LeftSideStyle)``;
 
@@ -56,5 +62,5 @@ export {
   RightSideStyle,
   IconStyle,
   BranchContentStyle,
-  ErrorsWrapperStyle
+  ErrorsWrapperStyle,
 };

@@ -1,6 +1,7 @@
 import { FunctionComponent, memo } from "react";
-import { Tooltip } from "../../../../../../components/Tooltip";
-import { useHover } from "../../../../../../hooks/useHover";
+import { useHover } from "../../../../hooks/useHover";
+import { Tooltip } from "../../../Tooltip";
+
 import { IconStyle, BranchContentStyle } from "../../style";
 
 const NotificationsComponent: FunctionComponent = () => {

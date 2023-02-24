@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const WelcomeComponentWrapperStyle = styled.div`
   position: relative;
-  /* display: flex; */
   height: 100%;
   padding: 20px 40px;
 
@@ -27,7 +26,7 @@ const ContentStyle = styled.div`
   & > img {
     width: 290px;
     height: 290px;
-    opacity: 0.2;
+    opacity: 0.4;
   }
 `;
 
@@ -70,30 +69,32 @@ const ShortCutStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 13px 0;
+
+  &:not(:first-child) {
+    margin-top: 13px;
+  }
 `;
 
 const ShortCutWrapperStyle = styled.div`
   display: flex;
   flex-direction: column;
+  width: 300px;
+  margin: 13px 0;
 `;
 
 const ShortCutLabelStyle = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
   margin-right: 8px;
   font-size: 13px;
-  text-align: left;
-  margin: 0 13px 0 auto;
+  text-align: right;
 `;
 
-const KeyStyle = styled.div`
-  display: inline-block;
-  margin: 0 2px;
-  padding: 3px 5px;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  background-color: rgba(128, 128, 128, 0.17);
-  color: #ccc;
-  font-size: 11px;
+const KeyStyleWrapperStyle = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 40%;
 `;
 
 export {
@@ -105,7 +106,7 @@ export {
   ParagraphStyle,
   ShortCutStyle,
   ShortCutLabelStyle,
-  KeyStyle,
   ContentStyle,
   ShortCutWrapperStyle,
+  KeyStyleWrapperStyle,
 };

@@ -3,9 +3,9 @@ import { useLocation } from "react-router-dom";
 import { ToggleSidebarButton } from "./components/ToggleSidebarButton";
 import { ToggleCustomizeButton } from "./components/ToggleCustomizeButton";
 
-import { HeaderPanelWrapperStyle, ToggleButtonsContentStyle } from "./style";
-import { PageNames } from "../../../enum";
 import { TogglePanelButton } from "./components/TogglePanelButton";
+import { PageNames } from "../../pages/enum";
+import { HeaderPanelWrapperStyle, ToggleButtonsContentStyle } from "./style";
 
 const HeaderPanelComponent: FunctionComponent = () => {
   const location = useLocation();

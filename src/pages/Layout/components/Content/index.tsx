@@ -5,15 +5,15 @@ import { Popup } from "../../../../components/Popup";
 import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import { Bar } from "../Bar";
 import { BreadCrumbs } from "../BreadCrumbs";
-import { Footer } from "../Footer";
-import { HeaderPanel } from "../HeaderPanel";
 import { Tabs } from "../Tabs";
 
-import { ContentStyle, MainWrapperStyle } from "../../style";
 import { PopupContext } from "../../../../components/Popup/components/PopupContext";
 import { useDispatch } from "react-redux";
 import { popupType } from "../../../../redux/popupType/actions";
 import { Settings } from "../MenuBar/components/Settings/component/ContentInside/data";
+import { Footer } from "../../../../components/Footer";
+import { ContentStyle, MainWrapperStyle } from "../../style";
+import { HeaderPanel } from "../../../../components/HeaderPanel";
 
 const ContentComponent: FunctionComponent = () => {
   const pages = useTypedSelector((state) => state.pages.pages);
