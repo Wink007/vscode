@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.b264e5df.js",
-    "static/media/vscode-bg.svg": "/static/media/vscode-bg.308b54ed23e73ba7bc8c45c73ec785fe.svg",
-    "index.html": "/index.html",
-    "main.b264e5df.js.map": "/static/js/main.b264e5df.js.map"
+    "main.js": "/vscode/static/js/main.79861906.js",
+    "static/media/vscode-bg.svg": "/vscode/static/media/vscode-bg.308b54ed23e73ba7bc8c45c73ec785fe.svg",
+    "index.html": "/vscode/index.html",
+    "main.79861906.js.map": "/vscode/static/js/main.79861906.js.map"
   },
   "entrypoints": [
-    "static/js/main.b264e5df.js"
+    "static/js/main.79861906.js"
   ]
 }
