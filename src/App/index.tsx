@@ -27,19 +27,9 @@ export const themesMap = {
   vscodeWebstormDarcula,
 };
 
-// The main component that will wrap our application
-// const Main = styled.main(
-//   ({ theme }) => `
-//   max-width ${theme.sizes.body};
-//   margin: 0 auto;
-//   padding: ${theme.space[4]};
-// `
-// );
-
 const App = ({ initialTheme = "vscodeDefault", initialCustomTheme = {} }) => {
   // Store the users theme preference in state
   const [currentTheme, setCurrentTheme] = useState(initialTheme);
-  console.log("currentTheme: ", currentTheme);
   const [customTheme, setCustomTheme] = useState(initialCustomTheme);
 
   const [cookies, setCookie] = useCookies();
