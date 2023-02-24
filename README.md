@@ -1,1 +1,1 @@
-[Let's see your work]:(vscode.github.io)
+[Let's see your work](vscode.github.io)
