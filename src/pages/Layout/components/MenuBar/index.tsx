@@ -4,6 +4,8 @@ import { MenuBarWrapper } from "./style";
 import { ListItem } from "./components/ListItem";
 import { Settings } from "./components/Settings";
 import { CustomLayoutContext } from "../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
+import { addPage } from "../../../../redux/addPages/actions";
+import { useDispatch } from "react-redux";
 
 const MenuBarComponent: FunctionComponent = () => {
   const [clickedId, setClickedId] = useState<number | null>(null);
@@ -12,9 +14,11 @@ const MenuBarComponent: FunctionComponent = () => {
     isPrimarySideBarOpened,
     setIsPrimarySideBarOpened,
   } = useContext(CustomLayoutContext);
+  const dispatch = useDispatch();
 
-  const checkParent = (id: number) => {
+  const checkParent = (id: number, link: string) => {
     setClickedId(id);
+    dispatch(addPage(link));
 
     if (id === clickedId) {
       setIsPrimarySideBarOpened(!isPrimarySideBarOpened);
@@ -37,7 +41,7 @@ const MenuBarComponent: FunctionComponent = () => {
             key={localeKey}
             link={link}
             icon={icon}
-            onClick={() => checkParent(i)}
+            onClick={() => checkParent(i, link)}
             localeKey={localeKey}
           />
         ))}

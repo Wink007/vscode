@@ -26,16 +26,14 @@ const ContentInsideComponent: FunctionComponent<ContentInsideProps> = ({
   };
 
   return (
-    <>
-      <ContentInsideStyleWrapper>
-        <ItemStyle onClick={handleItemClick(Settings.theme)}>
-          <LabelStyle>Color Theme</LabelStyle>
-        </ItemStyle>
-        <ItemStyle onClick={handleItemClick(Settings.customizeLayout)}>
-          <LabelStyle>Customize Layout</LabelStyle>
-        </ItemStyle>
-      </ContentInsideStyleWrapper>
-    </>
+    <ContentInsideStyleWrapper>
+      <ItemStyle onClick={handleItemClick(Settings.theme)}>
+        <LabelStyle>Color Theme</LabelStyle>
+      </ItemStyle>
+      <ItemStyle onClick={handleItemClick(Settings.customizeLayout)}>
+        <LabelStyle>Customize Layout</LabelStyle>
+      </ItemStyle>
+    </ContentInsideStyleWrapper>
   );
 };
 

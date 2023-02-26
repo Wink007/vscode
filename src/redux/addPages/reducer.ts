@@ -1,9 +1,10 @@
-import { PAGE_ADD, REMOVE_PAGE } from "./constants";
+import { PAGE_ADD, REMOVE_PAGE, RESET_PAGES } from "./constants";
 import { Action } from "../store.interface";
 import { AddPageParams } from "./interface";
+import { PageNames } from "../../pages/enum";
 
 const initialState: AddPageParams = {
-  pages: [],
+  pages: [PageNames.welcome],
 };
 
 export const addPageReducer = (
@@ -25,6 +26,10 @@ export const addPageReducer = (
       return {
         ...state,
         pages: state.pages.filter((page) => page !== action.meta),
+      };
+    case RESET_PAGES:
+      return {
+        ...initialState,
       };
     default:
       return { ...state };

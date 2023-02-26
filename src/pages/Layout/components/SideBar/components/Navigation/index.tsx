@@ -1,4 +1,4 @@
-import { FunctionComponent, memo, useState, useEffect } from "react";
+import { FunctionComponent, memo, useState } from "react";
 import { navData, pathTemplate } from "./data";
 import { NavigationComponentProps } from "./interface";
 import { useDispatch } from "react-redux";
@@ -28,7 +28,7 @@ const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
 
   const isEmptyPage = url === PageNames.welcome;
   const folderName = isEmptyPage ? "no folder opened" : "alex klievtsov";
-  const expandCollapseIcon = isOpenFolder ? "expand-all" : "collapse-all";
+  const expandCollapseIcon = isOpenFolder ? "collapse-all" : "expand-all";
 
   const chevronIcon = isOpen ? "chevron-down" : "chevron-right";
   const chevronIconFolder = isOpenFolder ? "chevron-down" : "chevron-right";
@@ -45,9 +45,7 @@ const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
     setIsOpenFolder((prev) => !prev);
   };
 
-  useEffect(() => {
-    dispatch(addPage(url));
-  }, [url, dispatch]);
+  const handleAddPage = (link: string) => () => dispatch(addPage(link));
 
   return (
     <NavigationComponentWrapper>
@@ -76,7 +74,12 @@ const NavigationComponent: FunctionComponent<NavigationComponentProps> = ({
               {navData.map(({ title, imgSrc, link }) => {
                 const tooltipName = `${pathTemplate}/${title}`;
                 return (
-                  <NavLinkStyle key={title} title={tooltipName} to={link}>
+                  <NavLinkStyle
+                    key={title}
+                    title={tooltipName}
+                    to={link}
+                    onClick={handleAddPage(link)}
+                  >
                     <ImgStyle>
                       <img src={imgSrc} alt="" />
                     </ImgStyle>

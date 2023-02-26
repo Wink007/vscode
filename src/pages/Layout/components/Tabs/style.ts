@@ -29,6 +29,7 @@ const TabsComponentWrapperStyle = styled.div`
 `;
 
 const ContentStyle = styled.div<{ isHover: boolean }>`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,7 +48,7 @@ const ContentStyle = styled.div<{ isHover: boolean }>`
     `}
 `;
 
-export const TabStyle = styled(NavLink)`
+const TabStyleWrapper = styled(NavLink)`
   position: relative;
   display: flex;
   align-items: center;
@@ -109,4 +110,10 @@ const ImgStyle = styled.div`
   margin-right: 6px;
 `;
 
-export { CloseIconStyle, TabsComponentWrapperStyle, ContentStyle, ImgStyle };
+export {
+  CloseIconStyle,
+  TabsComponentWrapperStyle,
+  ContentStyle,
+  ImgStyle,
+  TabStyleWrapper,
+};

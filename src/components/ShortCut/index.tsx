@@ -6,7 +6,12 @@ import { ShortCutComponentWrapperStyle } from "./style";
 const ShortCutComponent: FunctionComponent<ShortCutComponentProps> = ({
   shortCutLabel,
 }) => (
-  <ShortCutComponentWrapperStyle>{shortCutLabel}</ShortCutComponentWrapperStyle>
+  <>
+    <ShortCutComponentWrapperStyle>⌘</ShortCutComponentWrapperStyle>
+    <ShortCutComponentWrapperStyle>
+      {shortCutLabel}
+    </ShortCutComponentWrapperStyle>
+  </>
 );
 
 export const ShortCut = memo(ShortCutComponent);

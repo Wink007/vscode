@@ -31,7 +31,7 @@ const ToggleCustomizeButtonComponent: FunctionComponent = () => {
     <ButtonToggleSidebarStyle {...hoverProps} onClick={handleClick}>
       <span className="codicon codicon-layout" />
       {isHovering && (
-        <Tooltip position="bottomRight">
+        <Tooltip position="bottomRight" shortCutKey=",">
           <span>Customize Layout</span>
         </Tooltip>
       )}

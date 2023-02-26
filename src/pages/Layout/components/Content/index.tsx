@@ -14,6 +14,7 @@ import { Settings } from "../MenuBar/components/Settings/component/ContentInside
 import { Footer } from "../../../../components/Footer";
 import { ContentStyle, MainWrapperStyle } from "../../style";
 import { HeaderPanel } from "../../../../components/HeaderPanel";
+import { PageNames } from "../../../enum";
 
 const ContentComponent: FunctionComponent = () => {
   const pages = useTypedSelector((state) => state.pages.pages);
@@ -27,7 +28,7 @@ const ContentComponent: FunctionComponent = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-  const isWelcomePage = location.pathname === "/";
+  const isWelcomePage = location.pathname === PageNames.welcome;
   const isLeftPosition = layoutSideBarPosition === "left";
 
   const dispatch = useDispatch();
@@ -65,11 +66,12 @@ const ContentComponent: FunctionComponent = () => {
   }, [isPrimarySideBarOpened, isStatusBarOpened]);
 
   useEffect(() => {
-    if (pages.length === 0) {
-      navigate("/");
+    if (pages.length === 1 && pages[0] === PageNames.welcome) {
+      console.log(pages.length === 1 && pages[0] === PageNames.welcome);
+      navigate(PageNames.welcome);
       return;
     }
-  }, [pages.length, navigate]);
+  }, [pages.length]);
 
   return (
     <>
@@ -79,7 +81,7 @@ const ContentComponent: FunctionComponent = () => {
         <MainWrapperStyle>
           {!isWelcomePage && (
             <>
-              {!!pages.length && <Tabs />}
+              <Tabs />
               <BreadCrumbs />
             </>
           )}

@@ -1,8 +1,13 @@
 interface Values {
-    path: string;
-    imgSrc: string;
+  path: string;
+  imgSrc: string;
 }
 
 export interface TabListsParams {
-    [key: string]: Values;
+  [key: string]: Values;
+}
+
+export interface TabProps {
+  item: string;
+  onClose: () => void;
 }

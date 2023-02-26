@@ -23,7 +23,6 @@ const WelcomeComponent: FunctionComponent = () => {
                 <span>{label}</span>
               </ShortCutLabelStyle>
               <KeyStyleWrapperStyle>
-                <ShortCut shortCutLabel={"⌘"} />
                 <ShortCut shortCutLabel={key} />
               </KeyStyleWrapperStyle>
             </ShortCutStyle>

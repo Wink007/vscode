@@ -116,11 +116,13 @@ const getTooltipPlacement = ({ position }: TooltipWrapperStyleProps) => {
   }
 };
 
-export const TooltipWrapperStyle = styled.div<TooltipWrapperStyleProps>`
+const TooltipWrapperStyle = styled.div<TooltipWrapperStyleProps>`
   position: absolute;
   display: flex;
+  align-items: center;
   padding: 3px 5px;
   border: 1px solid rgba(204, 204, 204, 0.3);
+  border-radius: 4px;
   box-shadow: 0 0 6px 2px rgba(#252526, 0.6);
   background-color: #252526;
   color: #fff;
@@ -129,3 +131,9 @@ export const TooltipWrapperStyle = styled.div<TooltipWrapperStyleProps>`
   z-index: 2;
   ${getTooltipPlacement}
 `;
+
+const ShortCutKeyStyle = styled.span`
+  margin-left: 4px;
+`;
+
+export { TooltipWrapperStyle, ShortCutKeyStyle };
