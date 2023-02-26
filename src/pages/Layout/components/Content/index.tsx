@@ -67,7 +67,6 @@ const ContentComponent: FunctionComponent = () => {
 
   useEffect(() => {
     if (pages.length === 1 && pages[0] === PageNames.welcome) {
-      console.log(pages.length === 1 && pages[0] === PageNames.welcome);
       navigate(PageNames.welcome);
       return;
     }

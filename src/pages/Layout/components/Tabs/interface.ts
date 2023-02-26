@@ -9,5 +9,6 @@ export interface TabListsParams {
 
 export interface TabProps {
   item: string;
+  currentPos: number;
   onClose: () => void;
 }

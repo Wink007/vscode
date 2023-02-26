@@ -77,7 +77,7 @@ const TabsComponent: FunctionComponent = () => {
 
   return (
     <TabsComponentWrapperStyle>
-      {pages.map((item) => {
+      {pages.map((item, index) => {
         if (item === PageNames.welcome) {
           return null;
         }
@@ -89,7 +89,11 @@ const TabsComponent: FunctionComponent = () => {
             onMouseLeave={handleTabHover}
             isHover={isHover}
           >
-            <Tab item={item} onClose={handleCurrentTabClose(item)} />
+            <Tab
+              item={item}
+              onClose={handleCurrentTabClose(item)}
+              currentPos={index}
+            />
             <CloseIconStyle onClick={handleCurrentTabClose(item)}>
               <span className="codicon codicon-close" />
             </CloseIconStyle>

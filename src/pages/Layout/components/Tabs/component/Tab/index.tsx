@@ -7,14 +7,26 @@ import {
   LabelStyle,
 } from "../../../../../../assets/commonStyles/style";
 import { Tooltip } from "../../../../../../components/Tooltip";
-import { resetPages } from "../../../../../../redux/addPages/actions";
+import {
+  resetPages,
+  closeRight,
+} from "../../../../../../redux/addPages/actions";
 import { PageNames } from "../../../../../enum";
 import { tabLists } from "../../data";
 import { TabProps } from "../../interface";
 import { ImgStyle, TabStyleWrapper } from "../../style";
+import {
+  closeLeft,
+  closeOther,
+} from "../../../../../../redux/addPages/actions";
 
-const TabComponent: FunctionComponent<TabProps> = ({ item, onClose }) => {
+const TabComponent: FunctionComponent<TabProps> = ({
+  item,
+  onClose,
+  currentPos,
+}) => {
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,6 +34,7 @@ const TabComponent: FunctionComponent<TabProps> = ({ item, onClose }) => {
   const handleRightClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsTooltipOpen((prev) => !prev);
+    setCurrentIndex(currentPos);
     return;
   };
 
@@ -34,8 +47,26 @@ const TabComponent: FunctionComponent<TabProps> = ({ item, onClose }) => {
   };
 
   const handleResetPages = () => {
-    navigate(PageNames.welcome);
     dispatch(resetPages());
+    navigate(PageNames.welcome);
+  };
+
+  const handleRemoveRight = () => {
+    if (currentIndex) {
+      dispatch(closeRight(currentIndex));
+    }
+  };
+
+  const handleRemoveLeft = () => {
+    if (currentIndex) {
+      dispatch(closeLeft(currentIndex));
+    }
+  };
+
+  const handleRemoveOther = () => {
+    if (currentIndex) {
+      dispatch(closeOther(currentIndex));
+    }
   };
 
   return (
@@ -57,6 +88,15 @@ const TabComponent: FunctionComponent<TabProps> = ({ item, onClose }) => {
             </ItemStyle>
             <ItemStyle onClick={handleResetPages}>
               <LabelStyle>Close All</LabelStyle>
+            </ItemStyle>
+            <ItemStyle onClick={handleRemoveRight}>
+              <LabelStyle>Close to the Right</LabelStyle>
+            </ItemStyle>
+            <ItemStyle onClick={handleRemoveLeft}>
+              <LabelStyle>Close to the Left</LabelStyle>
+            </ItemStyle>
+            <ItemStyle onClick={handleRemoveOther}>
+              <LabelStyle>Close Other</LabelStyle>
             </ItemStyle>
           </ContentInsideStyleWrapper>
         </Tooltip>
