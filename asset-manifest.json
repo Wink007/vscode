@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/vscode/static/js/main.286ff380.js",
+    "main.js": "/vscode/static/js/main.63492491.js",
     "static/media/vscode-bg.svg": "/vscode/static/media/vscode-bg.308b54ed23e73ba7bc8c45c73ec785fe.svg",
     "index.html": "/vscode/index.html",
-    "main.286ff380.js.map": "/vscode/static/js/main.286ff380.js.map"
+    "main.63492491.js.map": "/vscode/static/js/main.63492491.js.map"
   },
   "entrypoints": [
-    "static/js/main.286ff380.js"
+    "static/js/main.63492491.js"
   ]
 }
