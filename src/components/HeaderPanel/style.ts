@@ -6,7 +6,7 @@ const HeaderPanelWrapperStyle = styled.div`
   justify-content: space-between;
   height: 25px;
   padding: 0 8px;
-  background-color: ${({ theme }) => theme.colors.menuBarBackground};
+  background-color: ${({ theme }) => theme.colors.headerPanelBackground};
 
   & .dots {
     display: flex;
@@ -36,7 +36,7 @@ const HeaderPanelWrapperStyle = styled.div`
   }
 
   & .path {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.activeColor};
     font-size: 13px;
   }
 `;
@@ -51,12 +51,13 @@ const ButtonToggleSidebarStyle = styled.div`
   margin-left: 4px;
   padding: 2px;
   border-radius: 5px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.primaryIconColor};
   font-size: 16px;
   cursor: pointer;
 
   &:hover {
-    background-color: #363737;
+    background-color: ${({ theme }) => theme.colors.hoverButton};
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 `;
 

@@ -13,7 +13,7 @@ const ItemStyle = styled.li<{ active?: boolean }>`
     active &&
     css`
       background-color: #06395d;
-      color: #fff;
+      color: ${({ theme }) => theme.colors.activeColor};
     `}
 
   ${({ active }) =>
@@ -21,7 +21,7 @@ const ItemStyle = styled.li<{ active?: boolean }>`
     css`
       &:hover {
         background-color: #2b2d2e;
-        /* color: #fff; */
+        /* color: ${({ theme }) => theme.colors.activeColor}; */
       }
     `}
 `;

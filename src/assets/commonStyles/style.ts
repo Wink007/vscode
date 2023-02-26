@@ -10,12 +10,12 @@ const ItemStyle = styled.li`
   display: flex;
   align-items: center;
   padding: 4px;
-  border-radius: 4px;
-  color: #9e9f9f;
+  border-radius: ${({ theme }) => theme.borderRadiusS};
+  color: ${({ theme }) => theme.colors.primaryColor};
 
   &:hover {
-    background-color: #06395d;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.focusedNavBackground};
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 `;
 

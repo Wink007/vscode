@@ -42,7 +42,7 @@ const LogoStyle = styled.div`
   width: 120px;
   height: 120px;
   background: ${({ theme }) => theme.colors.sideBarBackground};
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.colors.borderRadiusM};
 
   & > img {
     width: 100px;

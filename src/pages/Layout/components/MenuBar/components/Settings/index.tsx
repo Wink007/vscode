@@ -10,7 +10,7 @@ import { PopupContext } from "../../../../../../components/Popup/components/Popu
 
 import { Tooltip } from "../../../../../../components/Tooltip";
 import { ContentInside } from "./component/ContentInside";
-import { SettingsWrapperStyle, SpanIcon, IconStyle } from "./style";
+import { SettingsWrapperStyle, SpanIcon } from "./style";
 
 const SettingsComponent: FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +52,7 @@ const SettingsComponent: FunctionComponent = () => {
       onMouseOut={() => setIsHover(false)}
     >
       <SpanIcon isOpen={isOpen}>
-        <IconStyle className="icon codicon codicon-gear" />
+        <div className="icon codicon codicon-gear" />
         {isOpen && (
           <Tooltip position={tooltipPosition}>
             <ContentInside onClick={handleSettingsClick} />

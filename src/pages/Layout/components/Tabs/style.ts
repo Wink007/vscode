@@ -10,22 +10,24 @@ const CloseIconStyle = styled.button`
   width: 20px;
   height: 20px;
   margin: 0 4px;
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.borderRadiusS};
   opacity: 0;
   pointer-events: all;
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(90, 93, 94, 0.31);
+    background-color: ${({ theme }) => theme.colors.hoverButton};
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 `;
 
 const TabsComponentWrapperStyle = styled.div`
   display: flex;
-  width: max-content;
+  /* width: max-content; */
+  width: 100%;
   min-width: fit-content;
   height: 35px;
-  background-color: ${({ theme }) => theme.colors.sideBarBackground};
+  background-color: ${({ theme }) => theme.colors.tabPanelBackground}; ;
 `;
 
 const ContentStyle = styled.div<{ isHover: boolean }>`
@@ -42,7 +44,7 @@ const ContentStyle = styled.div<{ isHover: boolean }>`
       &:hover {
         ${CloseIconStyle} {
           opacity: 1;
-          color: inherit;
+          color: ${({ theme }) => theme.colors.activeColor};
         }
       }
     `}
@@ -67,14 +69,14 @@ const TabStyleWrapper = styled(NavLink)`
     left: 0;
     width: calc(100% + 26px);
     height: 35px;
-    background-color: ${({ theme }) => theme.colors.sideBarBackground};
+    background-color: ${({ theme }) => theme.colors.tabBackground};
     z-index: -1;
     content: "";
   }
 
   &.active {
-    background-color: ${({ theme }) => theme.colors.background};
-    color: rgba(255, 255, 255, 1);
+    background-color: ${({ theme }) => theme.colors.activeTabBackground};
+    color: ${({ theme }) => theme.colors.activeColor};
 
     &::before {
       position: absolute;
@@ -82,18 +84,18 @@ const TabStyleWrapper = styled(NavLink)`
       bottom: 0;
       width: calc(100% + 26px);
       height: 1px;
-      background-color: rgba(255, 255, 255, 1);
+      background-color: ${({ theme }) => theme.colors.activeColor};
       content: "";
     }
 
     &::after {
-      background-color: ${({ theme }) => theme.colors.background};
-      color: rgba(255, 255, 255, 1);
+      background-color: ${({ theme }) => theme.colors.activeTabBackground};
+      color: ${({ theme }) => theme.colors.activeColor};
     }
 
     & + ${CloseIconStyle} {
       opacity: 1;
-      color: rgba(255, 255, 255, 1);
+      color: ${({ theme }) => theme.colors.activeColor};
     }
 
     &:hover {

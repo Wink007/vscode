@@ -20,13 +20,13 @@ const NavLinkButtonStyle = styled(NavLink)`
   padding: 4px;
   border-radius: 2px;
   background-color: #0e639c;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.emptyButtonColor};
   font-size: 13px;
   text-align: center;
   cursor: pointer;
 
   &:hover {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.activeColor};
     background-color: #1177bb;
   }
 `;

@@ -6,23 +6,25 @@ const ItemStyle = styled.li<{ active?: boolean }>`
   justify-content: space-between;
   width: 100%;
   padding: 4px;
-  border-radius: 4px;
-  color: #9e9f9f;
+  border-radius: ${({ theme }) => theme.borderRadiusS};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-size: 11px;
   cursor: pointer;
 
   ${({ active }) =>
     active &&
     css`
-      background-color: #06395d;
-      color: #fff;
+      /* background-color: #06395d; */
+      background-color: ${({ theme }) => theme.colors.activeLink};
+      color: ${({ theme }) => theme.colors.activeColor};
     `}
 
   ${({ active }) =>
     !active &&
     css`
       &:hover {
-        background-color: #2b2d2e;
+        /* background-color: #2b2d2e; */
+        background-color: ${({ theme }) => theme.colors.hoverNavBackground};
       }
     `}
 `;

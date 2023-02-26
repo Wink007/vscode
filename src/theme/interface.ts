@@ -8,20 +8,7 @@ export interface LineHeightsParams {
   body: number;
 }
 export interface BaseParams {
-  breakpoints: string[];
-  space: string[];
-  sizes: {
-    body: string;
-  };
-  fonts: BaseFontsParams;
-  fontSizes: string[];
-  fontWeights: {
-    heading: number;
-    mid: number;
-    body: number;
-  };
-  lineHeights: LineHeightsParams;
-  radii: string[];
+  [key: string]: string;
 }
 
 export interface StringMap {

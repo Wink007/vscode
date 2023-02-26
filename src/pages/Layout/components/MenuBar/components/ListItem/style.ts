@@ -7,7 +7,7 @@ const ActiveLineStyle = styled.div<{ isLeftPosition: boolean }>`
   top: 0;
   width: 2px;
   height: 100%;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.activeColor};
   content: "";
   opacity: 0;
 
@@ -28,16 +28,16 @@ const ListItemWrapperStyle = styled(NavLink)`
   width: 48px;
   height: 48px;
   padding: 5px;
-  color: rgba(255, 255, 255, 0.4);
+  color: ${({ theme }) => theme.colors.primaryColor};
   transition: color 0.3;
   cursor: pointer;
 
   &:hover {
-    color: rgba(255, 255, 255, 1);
+    color: ${({ theme }) => theme.colors.primaryActiveIconColor};
   }
 
   &.active {
-    color: rgba(255, 255, 255, 1);
+    color: ${({ theme }) => theme.colors.primaryActiveIconColor};
 
     ${ActiveLineStyle} {
       opacity: 1;

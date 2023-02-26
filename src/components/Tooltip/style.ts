@@ -122,10 +122,10 @@ const TooltipWrapperStyle = styled.div<TooltipWrapperStyleProps>`
   align-items: center;
   padding: 3px 5px;
   border: 1px solid rgba(204, 204, 204, 0.3);
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.borderRadiusS};
   box-shadow: 0 0 6px 2px rgba(#252526, 0.6);
-  background-color: #252526;
-  color: #fff;
+  background-color: ${({ theme }) => theme.colors.sideBarBackground};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-size: 11px;
   white-space: nowrap;
   z-index: 2;

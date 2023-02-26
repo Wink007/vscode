@@ -4,7 +4,6 @@ import { LabelStyle } from "../style";
 const FlexStyle = styled.div`
   display: flex;
   align-items: center;
-  color: #c5c5c5;
 `;
 
 const LabelIconStyle = styled.div`
@@ -17,7 +16,7 @@ const CurrentLabelStyle = styled(LabelStyle)`
   padding-left: 0;
 
   &:hover {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 `;
 

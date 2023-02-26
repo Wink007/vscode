@@ -1,11 +1,12 @@
 import { memo, FunctionComponent, useState, useContext } from "react";
-import { menuItems } from "./data";
-import { MenuBarWrapper } from "./style";
+import { useDispatch } from "react-redux";
 import { ListItem } from "./components/ListItem";
 import { Settings } from "./components/Settings";
-import { CustomLayoutContext } from "../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
 import { addPage } from "../../../../redux/addPages/actions";
-import { useDispatch } from "react-redux";
+import { CustomLayoutContext } from "../../../../components/CustomizeLayout/CustomLayoutContext/CustomLayoutContext";
+import { menuItems } from "./data";
+
+import { MenuBarWrapper } from "./style";
 
 const MenuBarComponent: FunctionComponent = () => {
   const [clickedId, setClickedId] = useState<number | null>(null);

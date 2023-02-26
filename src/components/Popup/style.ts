@@ -8,10 +8,10 @@ const PopupComponentWrapperStyle = styled.ul`
   flex-direction: column;
   width: 600px;
   padding: 5px;
-  border: 1px solid #303031;
-  border-radius: 4px;
-  box-shadow: 0 0 6px 2px rgba(37, 37, 38, 0.8);
-  background-color: #252526;
+  border: 1px solid ${({ theme }) => theme.colors.blockBorderColor};
+  border-radius: ${({ theme }) => theme.borderRadiusS};
+  box-shadow: 0 0 6px 2px ${({ theme }) => theme.colors.boxShadow};
+  background-color: ${({ theme }) => theme.colors.sideBarBackground};
   transform: translateX(-50%);
   z-index: 2;
   overflow: hidden;
@@ -24,7 +24,8 @@ const HeadingStyle = styled.li`
   justify-content: center;
   height: 24px;
   margin: -6px -6px 4px -6px;
-  background-color: #3b3b3c;
+  /* background-color: ${({ theme }) => theme.colors.activeItemColor}; */
+  background-color: ${({ theme }) => theme.colors.tooltipHeadingBackground};
   font-size: 11px;
   text-align: center;
 `;
@@ -43,8 +44,8 @@ const CloseButtonStyle = styled.div`
   cursor: pointer;
 
   &:hover {
-    border-radius: 4px;
-    background-color: #363737;
+    border-radius: ${({ theme }) => theme.borderRadiusS};
+    background-color: ${({ theme }) => theme.colors.hoverButton};
   }
 `;
 

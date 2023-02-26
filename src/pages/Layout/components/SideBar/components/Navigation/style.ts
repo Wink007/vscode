@@ -21,7 +21,7 @@ const TitleStyle = styled.button`
   align-items: center;
   height: 22px;
   padding-right: 2px;
-  color: #cccccccc;
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ const CollapseIconStyle = styled.div`
   position: relative;
   margin-left: auto;
   z-index: 2;
-  color: #ccc;
+  color: ${({ theme }) => theme.colors.primaryIconColor};
   cursor: pointer;
 `;
 
@@ -90,12 +90,13 @@ const NavLinkStyle = styled(NavLink)`
   }
   &:focus {
     box-shadow: inset 0px 0px 0px 1px #097fd1;
-    background-color: #06395d;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.focusedNavBackground};
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 
   &:hover:not(&.active) {
-    background-color: #2a2d2e;
+    background-color: ${({ theme }) => theme.colors.hoverNavBackground};
+    /* background-color: #2a2d2e; */
   }
 
   & > span {
@@ -104,6 +105,7 @@ const NavLinkStyle = styled(NavLink)`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: ${({ theme }) => theme.colors.primaryColor};
   }
 `;
 
@@ -118,13 +120,13 @@ const SubTitleStyle = styled.button`
   align-items: center;
   height: 22px;
   padding-left: 16px;
-  color: #cccccccc;
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-size: 13px;
   cursor: pointer;
 
   &:focus {
     box-shadow: inset 0px 0px 0px 1px #097fd1;
-    background-color: #06395d;
+    background-color: ${({ theme }) => theme.colors.folderBackground};
   }
 `;
 

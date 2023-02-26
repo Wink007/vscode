@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { ThemeParams } from "../App/interface";
 
 export const GlobalStyle = createGlobalStyle<ThemeParams>(
-  ({ theme: { fonts, colors, lineHeights } }) => `
+  ({ theme: { colors } }) => `
   * {
     margin: 0;
     padding: 0;
@@ -13,12 +13,11 @@ export const GlobalStyle = createGlobalStyle<ThemeParams>(
   }
   body {
     background: ${colors.background};
-    color: ${colors.text};
+    color: ${colors.primaryColor};
     font-family: -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-    line-height: ${lineHeights.body};
   }
 
   a, a:hover, a:focus, a:active {

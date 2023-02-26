@@ -26,6 +26,7 @@ const BranchContentStyle = styled.div`
   display: flex;
   align-items: center;
   padding: 2px;
+  color: ${({ theme }) => theme.colors.primaryColor};
   line-height: 22px;
   font-size: 12px;
   cursor: pointer;
@@ -39,7 +40,7 @@ const BranchContentStyle = styled.div`
   }
 
   &:hover {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 `;
 

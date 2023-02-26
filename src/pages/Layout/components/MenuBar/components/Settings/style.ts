@@ -13,16 +13,17 @@ const SpanIcon = styled.div<{ isOpen: boolean }>`
   width: 48px;
   height: 48px;
   padding: 3px;
+  color: ${({ theme }) => theme.colors.primaryIconColor};
   cursor: pointer;
 
   ${({ isOpen }) =>
     isOpen &&
     css`
-      color: #fff;
+      color: ${({ theme }) => theme.colors.activeColor};
     `}
 
   &:hover {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.activeColor};
   }
 
   & .icon {
@@ -30,12 +31,4 @@ const SpanIcon = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-const IconStyle = styled.div`
-  align-items: "center";
-  justify-content: "center";
-  width: "100%";
-  height: "100%";
-  display: "flex";
-`;
-
-export { SettingsWrapperStyle, SpanIcon, IconStyle };
+export { SettingsWrapperStyle, SpanIcon };

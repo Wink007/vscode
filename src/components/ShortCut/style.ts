@@ -6,8 +6,8 @@ const ShortCutComponentWrapperStyle = styled.div`
   padding: 3px 5px;
   border: 1px solid transparent;
   border-radius: 3px;
-  background-color: rgba(128, 128, 128, 0.17);
-  color: #ccc;
+  background-color: ${({ theme }) => theme.colors.hoverButton};
+  color: ${({ theme }) => theme.colors.primaryColor};
   font-size: 11px;
 `;
 

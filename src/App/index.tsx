@@ -5,12 +5,9 @@ import { useCookies } from "react-cookie";
 
 import {
   base,
-  light,
-  dark,
-  solarizedLight,
-  solarizedDark,
   vscodeDefault,
   vscodeWebstormDarcula,
+  lightPlus,
 } from "../theme/theme";
 
 import { GlobalStyle } from "../styles";
@@ -19,12 +16,9 @@ import { ThemePreferenceContext } from "./ThemePreferenceContext";
 import { Pages } from "../pages";
 
 export const themesMap = {
-  light,
-  dark,
-  solarizedLight,
-  solarizedDark,
   vscodeDefault,
   vscodeWebstormDarcula,
+  lightPlus,
 };
 
 const App = ({ initialTheme = "vscodeDefault", initialCustomTheme = {} }) => {
@@ -72,7 +66,7 @@ const App = ({ initialTheme = "vscodeDefault", initialCustomTheme = {} }) => {
       currentTheme === "custom"
         ? Object.keys(customTheme).length
           ? customTheme
-          : themesMap.light
+          : themesMap.vscodeDefault
         : (themesMap as any)[currentTheme],
   };
 

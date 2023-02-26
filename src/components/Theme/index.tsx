@@ -20,6 +20,12 @@ const ThemeSettingsWrapper = () => {
   return (
     <>
       <ItemStyle
+        active={currentTheme === ThemeData.lightPlus}
+        onClick={() => handleChangeThemeClick(ThemeData.lightPlus)}
+      >
+        <LabelStyle>Light+</LabelStyle>
+      </ItemStyle>
+      <ItemStyle
         active={currentTheme === ThemeData.vscodeDefault}
         onClick={() => handleChangeThemeClick(ThemeData.vscodeDefault)}
       >
