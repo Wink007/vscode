@@ -113,9 +113,11 @@ const TabComponent: FunctionComponent<TabProps> = ({
             <ItemStyle onClick={onClose}>
               <LabelStyle>Close</LabelStyle>
             </ItemStyle>
-            <ItemStyle onClick={handleRemoveOther}>
-              <LabelStyle>Close Others</LabelStyle>
-            </ItemStyle>
+            {pages.length > 2 && (
+              <ItemStyle onClick={handleRemoveOther}>
+                <LabelStyle>Close Others</LabelStyle>
+              </ItemStyle>
+            )}
             {!isDisabledRight && (
               <ItemStyle onClick={handleRemoveRight}>
                 <LabelStyle>Close to the Right</LabelStyle>
