@@ -21,6 +21,7 @@ const ItemStyle = styled.li`
 
 const LabelStyle = styled.div`
   padding-left: 26px;
+  font-size: 13px;
 `;
 
 export { ContentInsideStyleWrapper, ItemStyle, LabelStyle };

@@ -1,6 +1,12 @@
-import { memo, FunctionComponent, useState, MouseEvent } from "react";
+import {
+  memo,
+  FunctionComponent,
+  useState,
+  MouseEvent,
+  useEffect,
+} from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   ContentInsideStyleWrapper,
   ItemStyle,
@@ -19,17 +25,23 @@ import {
   closeLeft,
   closeOther,
 } from "../../../../../../redux/addPages/actions";
+import { useTypedSelector } from "../../../../../../hooks/useTypedSelector";
 
 const TabComponent: FunctionComponent<TabProps> = ({
   item,
   onClose,
   currentPos,
 }) => {
+  const pages = useTypedSelector((state) => state.pages.pages);
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [isDisabledRight, setIsDisabledRight] = useState(false);
+  const [isDisabledLeft, setIsDisabledLeft] = useState(false);
+  console.log("isDisabledLeft: ", isDisabledLeft);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleRightClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -69,6 +81,24 @@ const TabComponent: FunctionComponent<TabProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (currentIndex && pages[pages.length - 1] === pages[currentIndex]) {
+      setIsDisabledRight(true);
+      return;
+    }
+    setIsDisabledRight(false);
+  }, [currentIndex, isDisabledRight, location.pathname]);
+
+  useEffect(() => {
+    if (currentIndex && pages[1] === pages[currentIndex]) {
+      console.log("pages[currentIndex]: ", pages[currentIndex]);
+      console.log("pages[0]: ", pages[0]);
+      setIsDisabledLeft(true);
+      return;
+    }
+    setIsDisabledLeft(false);
+  }, [currentIndex, isDisabledLeft, location.pathname]);
+
   return (
     <TabStyleWrapper
       to={item}
@@ -86,17 +116,21 @@ const TabComponent: FunctionComponent<TabProps> = ({
             <ItemStyle onClick={onClose}>
               <LabelStyle>Close</LabelStyle>
             </ItemStyle>
+            <ItemStyle onClick={handleRemoveOther}>
+              <LabelStyle>Close Others</LabelStyle>
+            </ItemStyle>
+            {!isDisabledRight && (
+              <ItemStyle onClick={handleRemoveRight}>
+                <LabelStyle>Close to the Right</LabelStyle>
+              </ItemStyle>
+            )}
+            {!isDisabledLeft && (
+              <ItemStyle onClick={handleRemoveLeft}>
+                <LabelStyle>Close to the Left</LabelStyle>
+              </ItemStyle>
+            )}
             <ItemStyle onClick={handleResetPages}>
               <LabelStyle>Close All</LabelStyle>
-            </ItemStyle>
-            <ItemStyle onClick={handleRemoveRight}>
-              <LabelStyle>Close to the Right</LabelStyle>
-            </ItemStyle>
-            <ItemStyle onClick={handleRemoveLeft}>
-              <LabelStyle>Close to the Left</LabelStyle>
-            </ItemStyle>
-            <ItemStyle onClick={handleRemoveOther}>
-              <LabelStyle>Close Other</LabelStyle>
             </ItemStyle>
           </ContentInsideStyleWrapper>
         </Tooltip>

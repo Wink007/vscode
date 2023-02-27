@@ -23,7 +23,6 @@ const ItemStyle = styled.li<{ active?: boolean }>`
     !active &&
     css`
       &:hover {
-        /* background-color: #2b2d2e; */
         background-color: ${({ theme }) => theme.colors.hoverNavBackground};
       }
     `}
