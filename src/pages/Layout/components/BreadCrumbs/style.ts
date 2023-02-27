@@ -12,4 +12,13 @@ const BreadCrumbsWrapper = styled.div`
   font-size: 13px;
 `;
 
-export { BreadCrumbsWrapper };
+const PathStyle = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > span {
+    padding-bottom: 2px;
+  }
+`;
+
+export { BreadCrumbsWrapper, PathStyle };
