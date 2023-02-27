@@ -35,7 +35,8 @@ const TabsComponent: FunctionComponent = () => {
     setIsMouseOver(false);
   };
 
-  const handleTabHover = useCallback(() => setIsMouseOver((prev) => !prev), []);
+  const handleTabHover = useCallback(() => setIsMouseOver(true), []);
+  const handleTabHoverLeave = useCallback(() => setIsMouseOver(false), []);
   const handleCurrentTabClose = (item: string) => () => handleClick(item);
 
   useEffect(() => {
@@ -86,7 +87,7 @@ const TabsComponent: FunctionComponent = () => {
           <ContentStyle
             key={item}
             onMouseEnter={handleTabHover}
-            onMouseLeave={handleTabHover}
+            onMouseLeave={handleTabHoverLeave}
             isHover={isHover}
           >
             <Tab
