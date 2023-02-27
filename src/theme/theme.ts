@@ -64,7 +64,7 @@ export const vscodeWebstormDarcula: StringMap = {
   sideBarBackground: "#3D3F41",
   blockBorderColor: "#4B4B4B",
   folderBackground: "#06395d",
-  tooltipHeadingBackground: "#3b3b3c",
+  tooltipHeadingBackground: "#4B4C4E",
   activeLink: "#16385B",
 
   headerPanelBackground: "#3C3C3C",

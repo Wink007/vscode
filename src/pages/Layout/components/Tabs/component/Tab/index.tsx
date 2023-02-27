@@ -90,8 +90,6 @@ const TabComponent: FunctionComponent<TabProps> = ({
 
   useEffect(() => {
     if (currentIndex && pages[1] === pages[currentIndex]) {
-      console.log("pages[currentIndex]: ", pages[currentIndex]);
-      console.log("pages[0]: ", pages[0]);
       setIsDisabledLeft(true);
       return;
     }
