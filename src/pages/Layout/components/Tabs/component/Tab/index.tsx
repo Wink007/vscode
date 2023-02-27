@@ -37,7 +37,6 @@ const TabComponent: FunctionComponent<TabProps> = ({
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [isDisabledRight, setIsDisabledRight] = useState(false);
   const [isDisabledLeft, setIsDisabledLeft] = useState(false);
-  console.log("isDisabledLeft: ", isDisabledLeft);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
