@@ -1,3 +1,3 @@
 export interface FooterDataParams {
-    [key: string]: string;
+  [key: string]: string;
 }

@@ -1,4 +1,4 @@
-import { PageNames } from '../../../../../enum';
+import { PageNames } from "../../../../../enum";
 export const pathTemplate = "~portfolio/alex klievtsov/src";
 
 export const navData = [

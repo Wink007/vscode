@@ -27,7 +27,7 @@ const TabsComponentWrapperStyle = styled.div`
   width: 100%;
   min-width: fit-content;
   height: 35px;
-  background-color: ${({ theme }) => theme.colors.tabPanelBackground}; ;
+  background-color: ${({ theme }) => theme.colors.tabPanelBackground};
 `;
 
 const ContentStyle = styled.div<{ isHover: boolean }>`

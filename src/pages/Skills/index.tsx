@@ -1,7 +1,8 @@
 import { FunctionComponent, memo } from "react";
+import { HeaderPage } from "../../components/HeaderPage";
 
 const SkillsComponent: FunctionComponent = () => {
-  return <div>Skills</div>;
+  return <HeaderPage title="Skills Page" />;
 };
 
 export const Skills = memo(SkillsComponent);
