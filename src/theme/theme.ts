@@ -13,6 +13,11 @@ export const lightPlus: StringMap = {
   tooltipHeadingBackground: "#E8E8E8",
   activeLink: "#E8E8E8",
 
+  contactTextKeyColor: "#22509F",
+  contactTextValueColor: "#95261F",
+  contactBracketsColor: "#1330F0",
+  contactSeparatorColor: "#000",
+
   headerPanelBackground: "#F8F8F8",
   tabBackground: "#F8F8F8",
   activeTabBackground: "#fff",
@@ -40,6 +45,11 @@ export const vscodeDefault: StringMap = {
   tooltipHeadingBackground: "#3b3b3c",
   activeLink: "#37373d",
 
+  contactTextKeyColor: "#9AD8F7",
+  contactTextValueColor: "#C98E79",
+  contactBracketsColor: "#F9D849",
+  contactSeparatorColor: "#D3D3D3",
+
   headerPanelBackground: "#3C3C3C",
   tabBackground: "#2d2d2d",
   activeTabBackground: "#1e1e1e",
@@ -66,6 +76,11 @@ export const vscodeWebstormDarcula: StringMap = {
   folderBackground: "#06395d",
   tooltipHeadingBackground: "#4B4C4E",
   activeLink: "#16385B",
+
+  contactTextKeyColor: "#9377A7",
+  contactTextValueColor: "#70865E",
+  contactBracketsColor: "#F9D849",
+  contactSeparatorColor: "#C07C41",
 
   headerPanelBackground: "#3C3C3C",
   tabBackground: "#3C3E3F",

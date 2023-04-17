@@ -15,6 +15,7 @@ const SideBarContent = styled.div<SideBarContentProps>`
 const SideBarWrapper = styled.div`
   position: relative;
   display: flex;
+  z-index: 1;
 
   & .title {
     height: 35px;

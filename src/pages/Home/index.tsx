@@ -5,7 +5,6 @@ import { BTN_TEXT, SUBTITLE_TEXT, TITLE_TEXT, WELCOME_TEXT } from "./data";
 import { PageNames } from "../enum";
 import {
   HomeWrapperStyle,
-  WelcomeBtnStyle,
   TitleStyle,
   SubtitleStyle,
   ConnectButtonStyle,
@@ -20,9 +19,9 @@ const HomeComponent: FunctionComponent = () => {
 
   return (
     <HomeWrapperStyle>
-      <WelcomeBtnStyle>{WELCOME_TEXT}</WelcomeBtnStyle>
       <TitleStyle>{TITLE_TEXT}</TitleStyle>
-      <SubtitleStyle>{SUBTITLE_TEXT}</SubtitleStyle>
+      <TitleStyle>{SUBTITLE_TEXT}</TitleStyle>
+      <SubtitleStyle>{WELCOME_TEXT}</SubtitleStyle>
       <ConnectButtonStyle
         to={PageNames.contact}
         onClick={() => handleAddPage(PageNames.contact)}
@@ -34,5 +33,3 @@ const HomeComponent: FunctionComponent = () => {
 };
 
 export const Home = memo(HomeComponent);
-
-//i love what i do

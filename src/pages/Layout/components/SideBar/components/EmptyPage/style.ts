@@ -26,7 +26,7 @@ const NavLinkButtonStyle = styled(NavLink)`
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.activeColor};
+    color: #fff;
     background-color: #1177bb;
   }
 `;
