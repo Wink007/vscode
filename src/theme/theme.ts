@@ -35,6 +35,7 @@ export const lightPlus: StringMap = {
   activeItemColor: "#E8E8E8",
   boxShadow: "#EDEEEE",
   emptyButtonColor: "#fff",
+  customColor: "#f55f8d",
 };
 
 export const vscodeDefault: StringMap = {
@@ -67,6 +68,7 @@ export const vscodeDefault: StringMap = {
   activeItemColor: "#06395d",
   boxShadow: "#1d1d1d",
   emptyButtonColor: "#fff",
+  customColor: "#ffc107",
 };
 
 export const vscodeWebstormDarcula: StringMap = {
@@ -99,4 +101,5 @@ export const vscodeWebstormDarcula: StringMap = {
   activeItemColor: "#06395d",
   boxShadow: "#1d1d1d",
   emptyButtonColor: "#fff",
+  customColor: "#ffc107",
 };

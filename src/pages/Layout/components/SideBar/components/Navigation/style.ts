@@ -88,6 +88,7 @@ const NavLinkStyle = styled(NavLink)`
   &.active {
     background-color: ${({ theme }) => theme.colors.activeLink};
   }
+
   &:focus {
     box-shadow: inset 0px 0px 0px 1px #097fd1;
     background-color: ${({ theme }) => theme.colors.focusedNavBackground};
